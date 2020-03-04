@@ -14,4 +14,6 @@ end
 def importer
   self.files.each do |file| 
     Song.new(file)
+  end 
+end 
 end
