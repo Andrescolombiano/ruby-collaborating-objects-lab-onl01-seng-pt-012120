@@ -13,7 +13,13 @@ class Song
      @@all
    end
    
-   def artist = (name)
+   def artist_name = (artist)
+     if artist.class == Artist 
+       @artist = artist
+     else
+       @artist = Artist.find_or_create_by_name(artist)
+     end 
+  end 
      
    def self.new_by_filename(name)
      split_name = name.split (" - ")
